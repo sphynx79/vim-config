@@ -1,22 +1,21 @@
 "  Identify platform {
 silent function! OSX()
-return has('macunix')
+  return has('macunix')
 endfunction
 
 silent function! LINUX()
-return has('unix') && !has('macunix') && !has('win32unix')
+  return has('unix') && !has('macunix') && !has('win32unix')
 endfunction
 
 silent function! WINDOWS()
-return  (has('win16') || has('win32') || has('win64'))
+  return  (has('win16') || has('win32') || has('win64'))
 endfunction
 " } Identify platform
 
 "colorscheme macvim
-"let ayucolor="mirage"
 " colorscheme codedark
-let ayucolor="dark" 
-colorscheme ayu
+" let ayucolor="dark" 
+" colorscheme ayu
 
 " colorscheme flatlandia
 " let did_install_syntax_menu = 0
@@ -29,10 +28,11 @@ if WINDOWS()
   set linespace=0
   " set guifont=UbuntuMonoDerivativePowerline_N:h12:cANSI:qDRAFT
 elseif OSX()
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h11      " Font family and font size.
+  " Font family and font size
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+  " Macvim smooth fonts
+  set antialias 
 endif
-set antialias                     " MacVim: smooth fonts.
-set encoding=utf-8                " Use UTF-8 everywhere.
 set background=dark               " Background.
 set cmdheight=1
 set mouse=a
